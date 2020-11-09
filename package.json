@@ -6,7 +6,7 @@
   "scripts": {
     "server": "forever -w backend/index.js",
     "develop": "concurrently \"npm run server\" \"npm run start --prefix frontend\"",
-    "start": "npm run start --prefix frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "",
   "license": "ISC",
