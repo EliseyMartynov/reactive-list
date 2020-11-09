@@ -1,0 +1,16 @@
+.message {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.error {
+  background: var(--error);
+  color: #fff;
+}
+
+.info {
+  background-color: var(--info);
+  color: #fff;
+}

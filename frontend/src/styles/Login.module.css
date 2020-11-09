@@ -1,0 +1,77 @@
+.formBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  margin: -30px auto;
+  height: 100vh;
+}
+
+.formBox label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.formBox label input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-top: 5px;
+  border: 2px solid var(--secondary);
+  outline: none;
+  padding: 0.3rem 0.5rem;
+  font-size: 1.2rem;
+  font-family: "Roboto Mono", monospace;
+}
+
+.formBox label span {
+  color: var(--error);
+  font-size: .8rem;
+}
+
+.submit {
+  margin-top: 1rem;
+  background: var(--secondary);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-family: "Roboto Mono", monospace;
+}
+
+.submit:hover {
+  background: var(--text);
+}
+
+.submit:active {
+  background: var(--text);
+  transform: scale(0.95);
+}
+
+.noacc {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--secondary);
+}
+
+.noacc a {
+  color: var(--text);
+}
+
+.noacc a:hover {
+  text-decoration: underline;
+}
+
+.inputFailed {
+  border: 2px solid var(--error) !important;
+}
+
+@media (max-width: 450px) {
+  .formBox {
+    width: 90%;
+  }
+}

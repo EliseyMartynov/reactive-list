@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+:root {
+  --bg: #222;
+  --primary: #2F2A0C;
+  --text: #E7C235;
+  --secondary: #AE9B2D;
+  --error: #FA0969;
+  --info: cornflowerblue;
+}
+
+html {
+  font-family: "Roboto Mono", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}

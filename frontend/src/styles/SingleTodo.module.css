@@ -1,0 +1,135 @@
+.box {
+  display: grid;
+  grid-template-columns: 2fr 8fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  width: 50%;
+  margin-bottom: 1rem;
+  grid-column-gap: 10px;
+  border: 2px dotted var(--secondary);
+  padding: 1rem 0;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border: 2px solid var(--text);
+  cursor: pointer;
+  outline: none;
+}
+
+.checkbox:checked::after {
+  content: '✔';
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.inputBox {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.inputBox i {
+  cursor: pointer;
+  align-self: center;
+  margin: 0 1rem;
+  transition: .3s;
+}
+
+.inputBox i:hover {
+  transition: .3s;
+  transform: rotate(180deg);
+}
+
+.text {
+  display: inline-flex;
+  justify-self: baseline;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  width: 100%;
+  color: var(--text);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.2rem;
+  word-break: break-word;
+}
+
+.outline {
+  text-decoration: line-through;
+}
+
+input.text {
+  cursor: auto;
+  border: 1px solid var(--secondary);
+  padding: 5px;
+}
+
+
+.edit {
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: .2s;
+  transform: scale(1.2)
+}
+
+.delete {
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: .2s;
+  transform: scale(1.2)
+}
+
+.edit:hover,
+.delete:hover {
+  color: var(--secondary);
+}
+
+i {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 1000px) {
+  .box {
+    width: 80%;
+    grid-column-gap: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .text {
+    font-size: 1rem;
+  }
+
+  .checkbox {
+    margin-left: 10px;
+  }
+
+  .box {
+    grid-template-columns: 1fr 6fr 20px 20px;
+    width: 95%;
+    font-size: .8rem;
+  }
+
+  .delete {
+    padding-right: 10px;
+  }
+
+  .inputBox {
+    padding: 0 15px;
+  }
+
+  .inputBox i {
+    margin: 0 5px;
+  }
+}
