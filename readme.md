@@ -6,7 +6,7 @@ Here is todo app based on **P**ostgreSQL | **E**XPRESS | **R**EACT | **N**ODE st
 * #### Frontend
 	* **React (create-react-app)**
 	* **Redux toolkit**
-	* **React beatiful dnd ** (and their link to cool video tutorial)
+	* **React beatiful dnd** (and their link to cool video tutorial)
 	* **React router**
 	* **Uuid**
 	* **Fontawesome cdn**
