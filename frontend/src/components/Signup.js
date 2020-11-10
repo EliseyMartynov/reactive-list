@@ -1,11 +1,18 @@
 import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { saveToken } from "../features/authSlice";
 import { useForm } from "react-hook-form";
-import styles from "../styles/Login.module.css";
-import { Link } from "react-router-dom";
 import Message from "./Message";
 import Spinner from "./Spinner";
+import styles from "../styles/Login.module.css";
+
 
 const Signup = () => {
+  const history = useHistory();
+  
+  const dispatch = useDispatch();
+  
   const [body, setBody] = useState({
     login: "",
     password: "",
@@ -29,10 +36,15 @@ const Signup = () => {
         password: body.password
       })
     });
+    const res = await data.json();
     await setBody({
       ...body,
-      response: await data.json()
+      response: res
     });
+    if(res.message) {
+      dispatch(saveToken({ token: res.message.token }));
+      history.push('/todos')
+    }
   };
 
   const bodyHandler = (value, name) => {
@@ -92,9 +104,6 @@ const Signup = () => {
         {body.response === "pending" && <Spinner />}
         {body.response.error && (
           <Message message={body.response.error} style="error" />
-        )}
-        {body.response.message && (
-          <Message message={body.response.message} style="info" />
         )}
         <span className={styles.noacc}>
           <Link to="/">Back to login</Link>

@@ -64,7 +64,7 @@ const Input = () => {
           <form onSubmit={e => addTodoHandler(e)}>
             <i
               onClick={() => logoutHandler()}
-              className="fas fa-sign-out-alt"
+              className="fas fa-door-open"
             ></i>
             <input
               id="todo-input"
