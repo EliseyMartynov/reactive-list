@@ -19,7 +19,7 @@ Here is todo app based on **P**ostgreSQL | **E**XPRESS | **R**EACT | **N**ODE st
 		* Concurrently
 		* Forever
 	* **jsonwebtoken**
-	* **node-postgress** (big thanks for cool documentation!)
+	* **node-postgres** (big thanks for cool documentation!)
 	* **bcrypt**
 	* **dotenv**
 	* **express-async-handler**
