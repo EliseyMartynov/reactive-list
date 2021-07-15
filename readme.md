@@ -26,7 +26,7 @@ Here is todo app based on **P**ostgreSQL | **E**XPRESS | **R**EACT | **N**ODE st
 	* ****
 ### Thanks for help to
 
-* **TraversyMedia** for his amazing courses and tutorials
+* **TraversyMedia** for his amazing courses and tutorials (built upon one of)
 * **Stackoverflow** topics :)
 * **Aleksandr Savelyev** for tips&advices
 * **Brackets** IDE (and  developers of plug-ins that I've used)
