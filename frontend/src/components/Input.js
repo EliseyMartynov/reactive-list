@@ -5,15 +5,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { addTodo, clearTodo } from "../features/todosSlice";
 import { removeToken } from "../features/authSlice";
 import Message from "./Message";
+import fetchPostUtil from "../utils/fetchPostUtil";
+import Spinner from "./Spinner";
 
 const Input = () => {
-
   const dispatch = useDispatch();
 
   const [txt, setTxt] = useState("");
   const [response, setResponse] = useState({});
 
-  const modelInput = e => {
+  const modelInput = (e) => {
     setTxt(e.target.value);
   };
   const validationHandler = () => {
@@ -28,28 +29,25 @@ const Input = () => {
     }
   };
 
-  const addTodoHandler = async e => {
+  const [loading, setLoading] = useState(false);
+
+  const addTodoHandler = async (e) => {
     e.preventDefault();
+    setLoading(true);
     if (!(txt.match(/[^\s+]/gi) === null || !txt)) {
+      setTxt("");
       const newTodo = {
         id: uuid(),
-        text: txt
+        text: txt,
       };
       dispatch(addTodo(newTodo));
-      const res = await fetch("/api/todos/", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ todos: localStorage.getItem("todos") })
-      });
+      const res = await fetchPostUtil();
       const data = await res.json();
       setResponse(data);
-      setTxt("");
     }
+    setLoading(false);
   };
-  
+
   const logoutHandler = () => {
     dispatch(clearTodo());
     dispatch(removeToken());
@@ -61,21 +59,22 @@ const Input = () => {
         <Message message={response.error} style="error" />
       ) : (
         <div className={styles.box}>
-          <form onSubmit={e => addTodoHandler(e)}>
-            <i
-              onClick={() => logoutHandler()}
-              className="fas fa-door-open"
-            ></i>
+          <form onSubmit={(e) => addTodoHandler(e)}>
+            <i onClick={() => logoutHandler()} className="fas fa-door-open"></i>
             <input
               id="todo-input"
               onKeyUp={() => validationHandler()}
-              onChange={e => modelInput(e)}
+              onChange={(e) => modelInput(e)}
               className={styles.input}
               type="text"
               value={txt}
             />
-            <button onClick={e => addTodoHandler(e)} className={styles.btn}>
-              Todo!
+            <button
+              onClick={(e) => addTodoHandler(e)}
+              className={styles.btn}
+              disabled={loading}
+            >
+              {loading ? <Spinner /> : "Todo!"}
             </button>
           </form>
         </div>

@@ -13,7 +13,7 @@
   border: 2px solid transparent !important;
   width: 400px;
   outline: none;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border: none;
   font-family: "Roboto Mono", monospace;
 }
@@ -25,23 +25,38 @@
 .btn {
   border: none;
   outline: none;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   color: var(--bg);
   background: var(--text);
   cursor: pointer;
   margin-left: 1rem;
-  transition: .2s;
-  font-family: 'Roboto Mono', monospace;
+  transition: 0.2s;
+  font-family: "Roboto Mono", monospace;
 }
 
 .btn:hover {
   background: var(--secondary);
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .btn:active {
-  transition: .2s;
-  transform: scale(.95);
+  transition: 0.2s;
+  transform: scale(0.95);
+}
+
+.btn:disabled {
+  height: 100%;
+  cursor: not-allowed;
+  background: transparent;
+  border: 1px solid var(--info);
+}
+
+.btn:disabled:active {
+  transform: scale(1);
+}
+
+.btn div {
+  margin: 0;
 }
 
 i {
@@ -55,7 +70,6 @@ i:hover {
 }
 
 @media (max-width: 650px) {
-
   form {
     display: flex;
     justify-content: space-evenly;
