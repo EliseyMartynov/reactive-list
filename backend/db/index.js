@@ -5,7 +5,9 @@ dotenv.config();
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: process.env.NODE_ENV === "development" ? false : true,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 module.exports = {
