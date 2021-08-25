@@ -1,17 +1,17 @@
 # Reactive TODO APP
 Here is todo app based on **P**ostgreSQL | **E**XPRESS | **R**EACT | **N**ODE stack.
-####Watch deployment on Heroku - [Reactive TODO app](https://reactive-todo-app.herokuapp.com/)
+#### Watch deployment on Heroku - [Reactive TODO app](https://reactive-todo-app.herokuapp.com/)
 
-##Used technologies (& credits)
-* ####Frontend
+## Used technologies (& credits)
+* #### Frontend
 	* **React (create-react-app)**
 	* **Redux toolkit**
-	* **React beatiful dnd ** (and their link to cool video tutorial)
+	* **React beatiful dnd** (and their link to cool video tutorial)
 	* **React router**
 	* **Uuid**
 	* **Fontawesome cdn**
 	* **Css modules** (from CRA)
-* ####Backend
+* #### Backend
 	* **Node.js**
 	* **Express**
 	* **PostgreSQL** (documentation and Amigoscode tutorial)
@@ -19,14 +19,14 @@ Here is todo app based on **P**ostgreSQL | **E**XPRESS | **R**EACT | **N**ODE st
 		* Concurrently
 		* Forever
 	* **jsonwebtoken**
-	* **node-postgress** (big thanks for cool documentation!)
+	* **node-postgres** (big thanks for cool documentation!)
 	* **bcrypt**
 	* **dotenv**
 	* **express-async-handler**
 	* ****
-###Thanks for help to
+### Thanks for help to
 
-* **TraversyMedia** for his amazing courses and tutorials
+* **TraversyMedia** for his amazing courses and tutorials (this repo built upon one of)
 * **Stackoverflow** topics :)
 * **Aleksandr Savelyev** for tips&advices
 * **Brackets** IDE (and  developers of plug-ins that I've used)
